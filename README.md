@@ -1,7 +1,6 @@
 # Money Savior
 
-![Money Savior Logo](https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I61n2T2qjrsU1bqy8bH1KgTToy6fZ8.png)
-
+![Image](https://github.com/user-attachments/assets/3b890323-480f-47ed-98d7-b9e52f008795)
 ## Simple and Effective Personal Expense Management Application
 
 Money Savior is a modern web application that helps you track and manage your daily expenses with ease. With a user-friendly interface and comprehensive features, the app gives you clear insights into your personal finances without requiring a complex backend system.
