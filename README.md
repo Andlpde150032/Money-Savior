@@ -37,28 +37,15 @@ Money Savior is a modern web application that helps you track and manage your da
 ### 🔧 Installation Guide
 
 1. Clone the repository:
-\`\`\`bash
-git clone https://github.com/your-username/money-savior.git
+git clone [https://github.com/Andlpde150032/Money-savior.git](https://github.com/Andlpde150032/Money-Savior.git)
 cd money-savior
-\`\`\`
-
 2. Install dependencies:
-\`\`\`bash
-npm install
-# or
-yarn install
-\`\`\`
-
-3. Run the application in development mode:
-\`\`\`bash
+npm install --legacy-peer-deps
+4. Run the application in development mode:
 npm run dev
-# or
-yarn dev
-\`\`\`
 
-4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
+5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
 
-### 📱 Usage Guide
 
 #### Dashboard
 
@@ -88,60 +75,16 @@ The dashboard displays an overview of your financial situation, including:
 - **Select time range**: Use the date picker to view reports for specific time periods
 - **Export to Excel**: Click the "Export to Excel" button to download an Excel report
 
-### 📁 Project Structure
-
-\`\`\`
-/money-savior
-  /app                  # Next.js App Router
-    /page.tsx           # Dashboard
-    /transactions       # Transaction management
-    /categories         # Category management
-    /reports            # Reports and Excel export
-  /components           # React components
-    /ui                 # UI components (shadcn/ui)
-    /expense-chart.tsx  # Expense charts
-    /...
-  /hooks                # Custom React hooks
-  /lib                  # Utility functions
-    /expense-context.tsx # Context API for state management
-    /excel-export.ts    # Excel export function
-    /utils.ts           # Utility functions
-  /public               # Static assets
-\`\`\`
-
 ### 🖼️ Screenshots
 
-![Dashboard](https://placeholder.com/dashboard.png)
-![Transactions](https://placeholder.com/transactions.png)
-![Reports](https://placeholder.com/reports.png)
+![Dashboard](https://github.com/user-attachments/assets/dfe767ab-857d-41f6-bf26-a5f8deb71310)
 
-### 🤝 Contributing
+![Transactions](https://github.com/user-attachments/assets/038aca3f-2e10-4405-a3b0-61900b779204)
 
-Contributions are welcome! If you'd like to contribute to the project:
+![Reports](https://github.com/user-attachments/assets/e887f525-39c2-47ed-9ff4-0e3864a77e9c)
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### 📝 Upcoming Features
-
-- [ ] Cloud data synchronization
-- [ ] Multi-user support
-- [ ] Budget setting and alerts
-- [ ] Recurring transactions
-- [ ] Import data from CSV/Excel files
-- [ ] Native mobile application
-
-### 📄 License
-
-This project is distributed under the MIT License. See the `LICENSE` file for more details.
 
 ### 👨‍💻 Author
 
-Money Savior was developed by [Your Name](https://github.com/your-username)
+Money Savior was developed by [An Duong](https://github.com/Andlpde150032])
 
----
-
-<p align="center">Made with ❤️ for better financial management</p>
