@@ -128,10 +128,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - **An Duong** - *Initial work* - [Andlpde150032](https://github.com/Andlpde150032)
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
