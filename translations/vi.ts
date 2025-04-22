@@ -210,5 +210,5 @@ export const vi = {
   noProfiles: "Không có hồ sơ nào",
 
   // Footer
-  copyright: "© 2024 Money Savior",
+  copyright: "© 2025 Money Savior",
 }
