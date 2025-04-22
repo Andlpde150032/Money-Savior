@@ -1,148 +1,139 @@
-# Money Savior
+# Money Savior 💰
 
-![Money Savior Logo](https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I61n2T2qjrsU1bqy8bH1KgTToy6fZ8.png)
+A modern, user-friendly expense tracking application built with Next.js 14 and TypeScript.
 
-## Simple and Effective Personal Expense Management Application
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://v0-simple-expense-tracker-sandy.vercel.app/)
 
-Money Savior is a modern web application that helps you track and manage your daily expenses with ease. With a user-friendly interface and comprehensive features, the app gives you clear insights into your personal finances without requiring a complex backend system.
+## 🌟 Features
 
-### 🌍 Language Support
-- English
-- Vietnamese (Tiếng Việt)
+- **📊 Interactive Dashboard**
+  - Real-time expense and income overview
+  - Visual charts and statistics
+  - Monthly spending trends
+  - Category-wise expense distribution
 
-### 🌟 Key Features
+- **💳 Transaction Management**
+  - Add, edit, and delete transactions
+  - Categorize expenses and income
+  - Filter transactions by date and type
+  - Search functionality
 
-- **Visual Dashboard**: Overview of expenses with charts and statistics
-- **Transaction Management**: Easily add, edit, and delete income and expenses
-- **Category Classification**: Category system with intuitive icons and colors
-- **Detailed Reports**: Analyze spending by time period and category
-- **Excel Export**: Create professional Excel reports with beautiful formatting
-- **Local Storage**: Data securely stored in your browser
-- **Responsive Interface**: Works smoothly on both desktop and mobile devices
+- **📁 Category Organization**
+  - Custom category creation
+  - Category-based filtering
+  - Intuitive icons and color coding
+  - Hierarchical category structure
 
-### 🚀 Technologies Used
+- **📈 Detailed Reports**
+  - Customizable date ranges
+  - Category-wise analysis
+  - Export to Excel
+  - Spending pattern insights
 
-- **Next.js 14**: Modern React framework with App Router
-- **TypeScript**: Ensuring safe and maintainable code
-- **Tailwind CSS**: Flexible and efficient styling
-- **ShadcnUI**: Beautiful and customizable component system
-- **Recharts**: Creating visual charts
-- **ExcelJS**: Exporting data to Excel files
-- **LocalStorage/IndexedDB**: Local data storage
+- **🌍 Multilingual Support**
+  - English
+  - Vietnamese (Tiếng Việt)
 
-### 📋 System Requirements
+- **💾 Local Storage**
+  - Secure data storage in browser
+  - No backend required
+  - Offline functionality
+  - Data persistence
+
+## 🚀 Tech Stack
+
+- **Frontend Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Charts**: Recharts
+- **Data Export**: ExcelJS
+- **Storage**: LocalStorage/IndexedDB
+
+## 📋 Prerequisites
 
 - Node.js 18.0.0 or higher
-- npm or yarn
+- npm or yarn package manager
 
-### 🔧 Installation Guide
+## 🛠️ Installation
 
-1. Clone the repository:
-\`\`\`bash
-git clone https://github.com/your-username/money-savior.git
-cd money-savior
-\`\`\`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Andlpde150032/Money-Savior.git
+   cd Money-Savior
+   ```
 
-2. Install dependencies:
-\`\`\`bash
-npm install
-# or
-yarn install
-\`\`\`
+2. **Install dependencies**
+   ```bash
+   npm install --legacy-peer-deps
+   # or
+   yarn install --legacy-peer-deps
+   ```
 
-3. Run the application in development mode:
-\`\`\`bash
-npm run dev
-# or
-yarn dev
-\`\`\`
+3. **Start development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-### 📱 Usage Guide
+## 📱 Usage Guide
 
-#### Dashboard
+### Dashboard
+- View total expenses and income
+- Monitor current balance
+- Analyze expense distribution
+- Track spending trends
+- Access recent transactions
 
-The dashboard displays an overview of your financial situation, including:
-- Total expenses and income for the month
-- Current balance
-- Expense distribution chart by category
-- Spending trends compared to the previous month
-- Recent transactions list
+### Managing Transactions
+1. Click "Add Transaction" button
+2. Fill in transaction details:
+   - Amount
+   - Category
+   - Date
+   - Description
+3. Save the transaction
+4. View in the transactions list
 
-#### Transaction Management
+### Category Management
+1. Navigate to Categories tab
+2. Create new categories with:
+   - Name
+   - Icon
+   - Color
+   - Type (Income/Expense)
+3. Edit or delete existing categories
 
-- **Add new transaction**: Click the "Add transaction" button and fill in the details
-- **View transactions**: Access the "Transactions" tab to see all transactions
-- **Filter transactions**: Use filters to search by date or transaction type
-- **Edit/Delete**: Click the three-dot menu next to a transaction to edit or delete it
+### Generating Reports
+1. Go to Reports section
+2. Select date range
+3. Choose categories to include
+4. Export to Excel if needed
 
-#### Category Management
+## 🤝 Contributing
 
-- **View categories**: Access the "Categories" tab to see all categories
-- **Add new category**: Click the "Add category" button and fill in the details
-- **Edit/Delete**: Click the three-dot menu next to a category to edit or delete it
-
-#### Reports and Excel Export
-
-- **View reports**: Access the "Reports" tab to see detailed analysis
-- **Select time range**: Use the date picker to view reports for specific time periods
-- **Export to Excel**: Click the "Export to Excel" button to download an Excel report
-
-### 📁 Project Structure
-
-\`\`\`
-/money-savior
-  /app                  # Next.js App Router
-    /page.tsx           # Dashboard
-    /transactions       # Transaction management
-    /categories         # Category management
-    /reports            # Reports and Excel export
-  /components           # React components
-    /ui                 # UI components (shadcn/ui)
-    /expense-chart.tsx  # Expense charts
-    /...
-  /hooks                # Custom React hooks
-  /lib                  # Utility functions
-    /expense-context.tsx # Context API for state management
-    /excel-export.ts    # Excel export function
-    /utils.ts           # Utility functions
-  /public               # Static assets
-\`\`\`
-
-### 🖼️ Screenshots
-
-![Dashboard](https://placeholder.com/dashboard.png)
-![Transactions](https://placeholder.com/transactions.png)
-![Reports](https://placeholder.com/reports.png)
-
-### 🤝 Contributing
-
-Contributions are welcome! If you'd like to contribute to the project:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### 📝 Upcoming Features
+## 👨‍💻 Authors
 
-- [ ] Cloud data synchronization
-- [ ] Multi-user support
-- [ ] Budget setting and alerts
-- [ ] Recurring transactions
-- [ ] Import data from CSV/Excel files
-- [ ] Native mobile application
+- **An Duong** - *Initial work* - [Andlpde150032](https://github.com/Andlpde150032)
 
-### 📄 License
+## 📄 License
 
-This project is distributed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### 👨‍💻 Author
+## 🙏 Acknowledgments
 
-Money Savior was developed by [Your Name](https://github.com/your-username)
-
----
-
-<p align="center">Made with ❤️ for better financial management</p>
+- [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
+- [Recharts](https://recharts.org/) for the charting library
+- [Next.js](https://nextjs.org/) for the amazing framework
