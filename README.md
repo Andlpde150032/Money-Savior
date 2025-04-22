@@ -2,7 +2,7 @@
 
 A modern, user-friendly expense tracking application built with Next.js 14 and TypeScript.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://v0-simple-expense-tracker-sandy.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://money-savior.vercel.app/)
 
 ## 🌟 Features
 
