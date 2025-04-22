@@ -209,5 +209,5 @@ export const en = {
   noProfiles: "No profiles available",
 
   // Footer
-  copyright: "© 2024 Money Savior",
+  copyright: "© 2025 Money Savior",
 }
