@@ -2,7 +2,7 @@
 
 A modern, user-friendly expense tracking application built with Next.js 14 and TypeScript.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://v0-simple-expense-tracker-sandy.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://money-savior.vercel.app/)
 
 ## 🌟 Features
 
@@ -127,10 +127,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 👨‍💻 Authors
 
 - **An Duong** - *Initial work* - [Andlpde150032](https://github.com/Andlpde150032)
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
