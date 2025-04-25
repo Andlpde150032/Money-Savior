@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description: "Simple and effective personal expense management application",
   generator: 'v0.dev',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
+    icon: '/apple-touch-icon.png',
+    shortcut: '/apple-touch-icon.png',
     apple: '/apple-touch-icon.png',
   },
 }
