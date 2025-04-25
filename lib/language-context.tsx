@@ -17,6 +17,17 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
+async function getCountryCode(): Promise<string> {
+  try {
+    const response = await fetch('https://ipapi.co/json/')
+    const data = await response.json()
+    return data.country_code
+  } catch (error) {
+    console.error('Error fetching location:', error)
+    return 'US' // Default to US if location detection fails
+  }
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
   const [translations, setTranslations] = useState<Translations>(en)
@@ -28,6 +39,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       const savedLanguage = localStorage.getItem("language") as Language
       if (savedLanguage && (savedLanguage === "en" || savedLanguage === "vi")) {
         setLanguage(savedLanguage)
+      } else {
+        // If no saved language, detect based on location
+        getCountryCode().then((countryCode) => {
+          if (countryCode === 'VN') {
+            setLanguage('vi')
+          } else {
+            setLanguage('en')
+          }
+        })
       }
       setMounted(true)
     }
