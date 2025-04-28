@@ -118,50 +118,53 @@ export function TransactionList({ filters = { search: "", date: null } }: Transa
             {transactions.map((transaction) => {
               const category = categories.find((c) => c.id === transaction.category)
               return (
-                <div key={transaction.id} className="flex items-center gap-4 rounded-lg border p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted">
+                <div 
+                  key={transaction.id} 
+                  className="flex items-center gap-4 rounded-lg border p-4 transition-all duration-200 hover:shadow-md hover:border-accent animate-fade-in"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted transition-colors">
                     {category ? (
-                      <CategoryIcon name={category.icon} className="h-5 w-5" style={{ color: category.color }} />
+                      <CategoryIcon name={category.icon} className="h-5 w-5" color={category.color} />
                     ) : transaction.type === "income" ? (
-                      <ArrowUpRight className="h-5 w-5 text-emerald-500" />
+                      <ArrowUpRight className="h-5 w-5 text-emerald-500 transition-colors" />
                     ) : (
-                      <ArrowDownLeft className="h-5 w-5 text-destructive" />
+                      <ArrowDownLeft className="h-5 w-5 text-destructive transition-colors" />
                     )}
                   </div>
                   <div className="flex-1 space-y-1">
-                    <p className="font-medium leading-none">{transaction.description}</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-medium leading-none transition-colors">{transaction.description}</p>
+                    <p className="text-sm text-muted-foreground transition-colors">
                       {category?.name || (transaction.type === "income" ? t("income") : t("expense"))}
                     </p>
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     <div
                       className={cn(
-                        "font-medium",
+                        "transition-colors",
                         transaction.type === "income" ? "text-emerald-500" : "text-destructive",
                       )}
                     >
                       {transaction.type === "income" ? "+" : "-"}
                       {formatCurrency(transaction.amount)}
                     </div>
-                    <div className="text-sm text-muted-foreground">{format(transaction.date, "HH:mm")}</div>
+                    <div className="text-sm text-muted-foreground transition-colors">{format(transaction.date, "HH:mm")}</div>
                   </div>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon">
+                      <Button variant="ghost" size="icon" className="transition-colors">
                         <MoreHorizontal className="h-4 w-4" />
                         <span className="sr-only">{t("options")}</span>
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
+                    <DropdownMenuContent align="end" className="animate-fade-in">
                       <DropdownMenuItem asChild>
-                        <Link href={`/transactions/${transaction.id}/edit`}>
+                        <Link href={`/transactions/${transaction.id}/edit`} className="transition-colors">
                           <Edit className="mr-2 h-4 w-4" />
                           {t("edit")}
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem
-                        className="text-destructive focus:text-destructive"
+                        className="text-destructive focus:text-destructive transition-colors"
                         onClick={() => handleDelete(transaction.id)}
                       >
                         <Trash className="mr-2 h-4 w-4" />

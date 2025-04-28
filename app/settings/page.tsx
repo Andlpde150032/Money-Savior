@@ -118,31 +118,31 @@ export default function SettingsPage() {
                   onValueChange={(value) => setTheme(value)}
                   className="grid grid-cols-3 gap-4"
                 >
-                  <div>
+                  <div className="min-w-0">
                     <RadioGroupItem value="light" id="light" className="peer sr-only" />
                     <Label
                       htmlFor="light"
                       className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                     >
-                      <span>{t("light")}</span>
+                      <span className="break-words text-center text-sm">{t("light")}</span>
                     </Label>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <RadioGroupItem value="dark" id="dark" className="peer sr-only" />
                     <Label
                       htmlFor="dark"
                       className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                     >
-                      <span>{t("dark")}</span>
+                      <span className="break-words text-center text-sm">{t("dark")}</span>
                     </Label>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <RadioGroupItem value="system" id="system" className="peer sr-only" />
                     <Label
                       htmlFor="system"
                       className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                     >
-                      <span>{t("system")}</span>
+                      <span className="break-words text-center text-sm">{t("system")}</span>
                     </Label>
                   </div>
                 </RadioGroup>

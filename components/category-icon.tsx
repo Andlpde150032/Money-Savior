@@ -1,4 +1,4 @@
-import type { LightbulbIcon as LucideProps } from "lucide-react"
+import type { LucideProps } from "lucide-react"
 import {
   BadgeDollarSign,
   Banknote,
@@ -37,7 +37,7 @@ const icons = {
   wifi: Wifi,
 }
 
-interface CategoryIconProps extends LucideProps {
+interface CategoryIconProps extends Omit<LucideProps, "ref"> {
   name: string
 }
 
