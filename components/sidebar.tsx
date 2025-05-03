@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { BarChart3, CreditCard, Home, LayoutGrid, Moon, Settings, Sun } from "lucide-react"
+import { BarChart3, CreditCard, Home, LayoutGrid, Moon, Settings, Sun, Info } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -52,6 +52,12 @@ export function Sidebar() {
       label: t("settings"),
       icon: Settings,
       active: pathname.includes("/settings"),
+    },
+    {
+      href: "/about",
+      label: "About",
+      icon: Info,
+      active: pathname.includes("/about"),
     },
   ]
 
