@@ -215,4 +215,36 @@ export const vi = {
 
   // Footer
   copyright: "© 2025 Money Savior",
+
+  // About
+  about: "Giới thiệu",
+  aboutDescription: "Thông tin về Money Savior và nhà phát triển",
+  viewAboutPage: "Xem trang Giới thiệu",
+
+  // About Page
+  aboutPageTitle: "Giới thiệu Money Savior",
+  developer: "Nhà phát triển",
+  aboutTheCreator: "Về người sáng tạo",
+  developerIntro: "Xin chào! Tôi là AnDLP — người sáng tạo của Money Savior. Tôi đam mê xây dựng các ứng dụng hữu ích, hiệu quả và thú vị giúp mọi người quản lý cuộc sống tốt hơn.",
+  developerMessage: "Tôi luôn nỗ lực cải thiện Money Savior với các tính năng mới và tối ưu hóa dựa trên phản hồi của bạn. Nếu bạn có ý tưởng, đề xuất, hoặc chỉ muốn chào hỏi, hãy liên hệ hoặc kết nối với tôi trên GitHub. Hãy cùng nhau làm cho Money Savior tốt hơn!",
+  aboutTheProject: "Về dự án",
+  learnMoreAboutMoneySavior: "Tìm hiểu thêm về Money Savior",
+  projectDescription1: "Money Savior là một ứng dụng theo dõi chi tiêu hiện đại, thân thiện với người dùng được thiết kế để giúp bạn quản lý tài chính hiệu quả. Được xây dựng bằng Next.js và TypeScript, nó cung cấp trải nghiệm liền mạch để theo dõi chi tiêu, quản lý danh mục và tạo báo cáo chi tiết.",
+  projectDescription2: "Dự án tập trung vào tính đơn giản, bảo mật và trải nghiệm người dùng, giúp quản lý tài chính cá nhân dễ dàng tiếp cận với tất cả mọi người.",
+  keyFeatures: "Tính năng chính",
+  whatMakesMoneySaviorSpecial: "Điều gì làm Money Savior đặc biệt",
+  realTimeExpenseTracking: "Theo dõi chi tiêu theo thời gian thực",
+  customizableExpenseCategories: "Danh mục chi tiêu tùy chỉnh",
+  detailedFinancialReports: "Báo cáo tài chính chi tiết",
+  multiLanguageSupport: "Hỗ trợ đa ngôn ngữ",
+  darkLightThemeSupport: "Hỗ trợ giao diện sáng/tối",
+  responsiveDesign: "Thiết kế tương thích với mọi thiết bị",
+  technologyStack: "Công nghệ sử dụng",
+  builtWithModernTechnologies: "Được xây dựng với công nghệ hiện đại",
+  nextjsReactFramework: "Next.js 14 - Framework React",
+  typescriptTypeSafety: "TypeScript - Đảm bảo kiểu dữ liệu",
+  tailwindStyling: "Tailwind CSS - Tạo kiểu",
+  shadcnComponentLibrary: "Shadcn UI - Thư viện component",
+  nextauthAuthentication: "NextAuth.js - Xác thực",
+  prismaDatabaseORM: "Prisma - ORM cơ sở dữ liệu",
 }

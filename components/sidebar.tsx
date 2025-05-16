@@ -55,7 +55,7 @@ export function Sidebar() {
     },
     {
       href: "/about",
-      label: "About",
+      label: t("about"),
       icon: Info,
       active: pathname.includes("/about"),
     },

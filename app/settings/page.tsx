@@ -1,8 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Download, FileUp, Plus } from "lucide-react"
+import { Download, FileUp, Plus, Info } from "lucide-react"
 import { useTheme } from "next-themes"
+import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -261,6 +262,23 @@ export default function SettingsPage() {
             </div>
           </CardContent>
         </Card>
+
+        {isMobile && (
+          <Card>
+            <CardHeader>
+              <CardTitle>{t("about")}</CardTitle>
+              <CardDescription>{t("aboutDescription")}</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Link href="/about">
+                <Button variant="outline" className="w-full">
+                  <Info className="mr-2 h-4 w-4" />
+                  {t("viewAboutPage")}
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        )}
       </div>
     </div>
   )

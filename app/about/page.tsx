@@ -1,17 +1,32 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/lib/language-context"
+import { useEffect, useState } from "react"
 
 export default function AboutPage() {
+  const { t } = useLanguage()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
   return (
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-4xl font-bold mb-8">About Money Savior</h1>
-      
+      <h1 className="text-4xl font-bold mb-8">{t("aboutPageTitle")}</h1>
+
       <div className="grid gap-6 md:grid-cols-2">
-      <Card>
+        <Card>
           <CardHeader>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
               <div>
-                <CardTitle>Developer</CardTitle>
-                <CardDescription>About the creator</CardDescription>
+                <CardTitle>{t("developer")}</CardTitle>
+                <CardDescription>{t("aboutTheCreator")}</CardDescription>
               </div>
               <div className="flex items-center gap-3 justify-start md:justify-end">
                 <img
@@ -33,65 +48,62 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <p className="mb-2">
-              Hi! I'm <span className="font-semibold">AnDLP</span> — the creator of Money Savior. I'm passionate about building useful, efficient, and delightful applications that help people manage their lives better. 
+              {t("developerIntro")}
             </p>
             <p>
-              I'm always working to improve Money Savior with new features and optimizations based on your feedback. If you have ideas, suggestions, or just want to say hello, feel free to reach out or connect with me on GitHub. Let's make Money Savior even better together!
+              {t("developerMessage")}
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>About the Project</CardTitle>
-            <CardDescription>Learn more about Money Savior</CardDescription>
+            <CardTitle>{t("aboutTheProject")}</CardTitle>
+            <CardDescription>{t("learnMoreAboutMoneySavior")}</CardDescription>
           </CardHeader>
           <CardContent>
             <p className="mb-4">
-              Money Savior is a modern, user-friendly expense tracking application designed to help you manage your finances effectively. 
-              Built with Next.js and TypeScript, it offers a seamless experience for tracking your expenses, managing categories, and generating insightful reports.
+              {t("projectDescription1")}
             </p>
             <p>
-              The project focuses on simplicity, security, and user experience, making personal finance management accessible to everyone.
+              {t("projectDescription2")}
             </p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Key Features</CardTitle>
-            <CardDescription>What makes Money Savior special</CardDescription>
+            <CardTitle>{t("keyFeatures")}</CardTitle>
+            <CardDescription>{t("whatMakesMoneySaviorSpecial")}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Real-time expense tracking</li>
-              <li>Customizable expense categories</li>
-              <li>Detailed financial reports</li>
-              <li>Multi-language support</li>
-              <li>Dark/Light theme support</li>
-              <li>Responsive design for all devices</li>
+              <li>{t("realTimeExpenseTracking")}</li>
+              <li>{t("customizableExpenseCategories")}</li>
+              <li>{t("detailedFinancialReports")}</li>
+              <li>{t("multiLanguageSupport")}</li>
+              <li>{t("darkLightThemeSupport")}</li>
+              <li>{t("responsiveDesign")}</li>
             </ul>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>Technology Stack</CardTitle>
-            <CardDescription>Built with modern technologies</CardDescription>
+            <CardTitle>{t("technologyStack")}</CardTitle>
+            <CardDescription>{t("builtWithModernTechnologies")}</CardDescription>
           </CardHeader>
           <CardContent>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Next.js 14 - React framework</li>
-              <li>TypeScript - Type safety</li>
-              <li>Tailwind CSS - Styling</li>
-              <li>Shadcn UI - Component library</li>
-              <li>NextAuth.js - Authentication</li>
-              <li>Prisma - Database ORM</li>
+              <li>{t("nextjsReactFramework")}</li>
+              <li>{t("typescriptTypeSafety")}</li>
+              <li>{t("tailwindStyling")}</li>
+              <li>{t("shadcnComponentLibrary")}</li>
+              <li>{t("nextauthAuthentication")}</li>
+              <li>{t("prismaDatabaseORM")}</li>
             </ul>
           </CardContent>
         </Card>
-
-     
       </div>
     </div>
   )
-} 
+}

@@ -214,4 +214,36 @@ export const en = {
 
   // Footer
   copyright: "© 2025 Money Savior",
+
+  // About
+  about: "About",
+  aboutDescription: "Information about Money Savior and its developer",
+  viewAboutPage: "View About Page",
+
+  // About Page
+  aboutPageTitle: "About Money Savior",
+  developer: "Developer",
+  aboutTheCreator: "About the creator",
+  developerIntro: "Hi! I'm AnDLP — the creator of Money Savior. I'm passionate about building useful, efficient, and delightful applications that help people manage their lives better.",
+  developerMessage: "I'm always working to improve Money Savior with new features and optimizations based on your feedback. If you have ideas, suggestions, or just want to say hello, feel free to reach out or connect with me on GitHub. Let's make Money Savior even better together!",
+  aboutTheProject: "About the Project",
+  learnMoreAboutMoneySavior: "Learn more about Money Savior",
+  projectDescription1: "Money Savior is a modern, user-friendly expense tracking application designed to help you manage your finances effectively. Built with Next.js and TypeScript, it offers a seamless experience for tracking your expenses, managing categories, and generating insightful reports.",
+  projectDescription2: "The project focuses on simplicity, security, and user experience, making personal finance management accessible to everyone.",
+  keyFeatures: "Key Features",
+  whatMakesMoneySaviorSpecial: "What makes Money Savior special",
+  realTimeExpenseTracking: "Real-time expense tracking",
+  customizableExpenseCategories: "Customizable expense categories",
+  detailedFinancialReports: "Detailed financial reports",
+  multiLanguageSupport: "Multi-language support",
+  darkLightThemeSupport: "Dark/Light theme support",
+  responsiveDesign: "Responsive design for all devices",
+  technologyStack: "Technology Stack",
+  builtWithModernTechnologies: "Built with modern technologies",
+  nextjsReactFramework: "Next.js 14 - React framework",
+  typescriptTypeSafety: "TypeScript - Type safety",
+  tailwindStyling: "Tailwind CSS - Styling",
+  shadcnComponentLibrary: "Shadcn UI - Component library",
+  nextauthAuthentication: "NextAuth.js - Authentication",
+  prismaDatabaseORM: "Prisma - Database ORM",
 }
