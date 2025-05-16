@@ -118,8 +118,8 @@ export function TransactionList({ filters = { search: "", date: null } }: Transa
             {transactions.map((transaction) => {
               const category = categories.find((c) => c.id === transaction.category)
               return (
-                <div 
-                  key={transaction.id} 
+                <div
+                  key={transaction.id}
                   className="flex items-center gap-4 rounded-lg border p-4 transition-all duration-200 hover:shadow-md hover:border-accent animate-fade-in"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted transition-colors">
@@ -147,7 +147,9 @@ export function TransactionList({ filters = { search: "", date: null } }: Transa
                       {transaction.type === "income" ? "+" : "-"}
                       {formatCurrency(transaction.amount)}
                     </div>
-                    <div className="text-sm text-muted-foreground transition-colors">{format(transaction.date, "HH:mm")}</div>
+                    <div className="text-sm text-muted-foreground transition-colors">
+                      {transaction.time || format(transaction.date, "HH:mm")}
+                    </div>
                   </div>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>

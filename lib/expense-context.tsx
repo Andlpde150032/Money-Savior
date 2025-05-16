@@ -13,6 +13,7 @@ export interface Transaction {
   type: TransactionType
   category: string
   date: Date
+  time?: string // Add time field (format: "HH:mm")
   description: string
   createdAt: Date
 }

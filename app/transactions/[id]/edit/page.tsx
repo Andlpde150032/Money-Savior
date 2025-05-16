@@ -5,6 +5,7 @@ import { useRouter, useParams } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { format } from "date-fns"
 
 import { Button } from "@/components/ui/button"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -17,12 +18,14 @@ import { CategoryIcon } from "@/components/category-icon"
 import { useLanguage } from "@/lib/language-context"
 import { TransactionSkeleton } from "@/components/skeletons/transaction-skeleton"
 import { CalendarWrapper } from "@/components/ui/calendar-wrapper"
+import { TimePicker } from "@/components/ui/time-picker"
 
 const formSchema = z.object({
   amount: z.coerce.number().positive("Amount must be greater than 0"),
   type: z.enum(["expense", "income"]),
   category: z.string().min(1, "Please select a category"),
   date: z.date(),
+  time: z.string().optional(),
   description: z.string().min(1, "Please enter a description"),
 })
 
@@ -45,6 +48,7 @@ export default function EditTransactionPage() {
       type: "expense",
       category: "",
       date: new Date(),
+      time: format(new Date(), "HH:mm"),
       description: "",
     },
   })
@@ -57,11 +61,15 @@ export default function EditTransactionPage() {
       // Ensure we're working with a proper Date object
       const transactionDate = transaction.date instanceof Date ? transaction.date : new Date(transaction.date)
 
+      // Get time from transaction or default to current time
+      const transactionTime = transaction.time || format(new Date(), "HH:mm")
+
       form.reset({
         amount: transaction.amount,
         type: transaction.type,
         category: transaction.category,
         date: transactionDate,
+        time: transactionTime,
         description: transaction.description,
       })
       setIsLoading(false)
@@ -209,23 +217,43 @@ export default function EditTransactionPage() {
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="date"
-            render={({ field }) => (
-              <FormItem className="flex flex-col">
-                <FormLabel>{t("transactionDate")}</FormLabel>
-                <FormControl>
-                  <CalendarWrapper
-                    value={field.value}
-                    onChange={(date) => date && field.onChange(date)}
-                    placeholder={t("pickDate")}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="date"
+              render={({ field }) => (
+                <FormItem className="flex flex-col">
+                  <FormLabel>{t("transactionDate")}</FormLabel>
+                  <FormControl>
+                    <CalendarWrapper
+                      value={field.value}
+                      onChange={(date) => date && field.onChange(date)}
+                      placeholder={t("pickDate")}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="time"
+              render={({ field }) => (
+                <FormItem className="flex flex-col">
+                  <FormLabel>{t("transactionTime")}</FormLabel>
+                  <FormControl>
+                    <TimePicker
+                      value={field.value}
+                      onChange={field.onChange}
+                      placeholder={t("pickTime")}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
           <FormField
             control={form.control}
