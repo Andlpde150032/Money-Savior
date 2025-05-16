@@ -120,23 +120,23 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
         const currentProfileId = localStorage.getItem("currentProfileId")
 
         if (savedProfiles) {
-          const parsedProfiles = JSON.parse(savedProfiles)
-          setProfiles(
-            parsedProfiles.map((p: any) => ({
-              ...p,
-              createdAt: new Date(p.createdAt),
-            })),
-          )
-        }
+          const parsedProfiles = JSON.parse(savedProfiles).map((p: any) => ({
+            ...p,
+            createdAt: new Date(p.createdAt),
+          }));
 
-        if (currentProfileId) {
-          const profile = profiles.find((p) => p.id === currentProfileId)
-          if (profile) {
-            setCurrentProfile(profile)
+          setProfiles(parsedProfiles);
+
+          // Set the current profile from the parsed profiles directly
+          if (currentProfileId) {
+            const profile = parsedProfiles.find((p: any) => p.id === currentProfileId);
+            if (profile) {
+              setCurrentProfile(profile);
+            }
           }
         }
 
-        setMounted(true)
+        setMounted(true);
       } catch (error) {
         console.error("Error loading profiles from localStorage:", error)
       }
