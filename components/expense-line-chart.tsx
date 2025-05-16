@@ -51,24 +51,122 @@ export function ExpenseLineChart({ dateRange }: ExpenseLineChartProps) {
     [t("balanceLabel")]: day.balance,
   }))
 
+  // Custom formatter for currency values on the y-axis
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("vi-VN", {
-      style: "currency",
-      currency: "VND",
-      maximumFractionDigits: 0,
-    }).format(value)
-  }
+    if (value === 0) return "0 đ";
+
+    // For small values, show without abbreviation
+    if (Math.abs(value) < 1000) return `${value} đ`;
+
+    // For values in thousands (1K-999K)
+    if (Math.abs(value) < 1000000) {
+      const sign = value < 0 ? "-" : "";
+      return `${sign}${Math.round(Math.abs(value)/1000)}K đ`;
+    }
+
+    // For values in millions (1M+)
+    const sign = value < 0 ? "-" : "";
+    return `${sign}${(Math.abs(value)/1000000).toFixed(1)}M đ`;
+  };
+
+  // Find the maximum value to set appropriate Y-axis ticks
+  const allValues = data.flatMap(item => [
+    Number(item[t("totalExpensesLabel")] || 0),
+    Number(item[t("totalIncomeLabel")] || 0),
+    Number(item[t("balanceLabel")] || 0)
+  ]);
+
+  const maxValue = Math.max(...allValues, 10000); // Ensure at least 10000 as minimum max value
+  const minValue = Math.min(0, ...allValues); // Get the minimum value, could be negative for balance
+
+  // Calculate appropriate tick values based on the maximum and minimum values
+  const getTickValues = (min: number, max: number) => {
+    // Handle case with negative values (balance might be negative)
+    if (min < 0) {
+      const range = max - min;
+      const steps = 5; // Number of steps we want
+
+      // For small ranges
+      if (range < 10000) {
+        const step = Math.ceil(range / steps / 1000) * 1000;
+        return [
+          Math.floor(min / step) * step,
+          Math.floor(min / step) * step + step,
+          0,
+          step,
+          Math.ceil(max / step) * step
+        ];
+      }
+
+      // For medium ranges
+      if (range < 100000) {
+        const step = Math.ceil(range / steps / 10000) * 10000;
+        return [
+          Math.floor(min / step) * step,
+          Math.floor(min / step) * step + step,
+          0,
+          step,
+          Math.ceil(max / step) * step
+        ];
+      }
+
+      // For large ranges
+      const step = Math.ceil(range / steps / 100000) * 100000;
+      return [
+        Math.floor(min / step) * step,
+        Math.floor(min / step) * step + step,
+        0,
+        step,
+        Math.ceil(max / step) * step
+      ];
+    }
+
+    // For positive-only values
+    // For very small values
+    if (max < 5000) {
+      return [0, 1000, 2000, 3000, 4000, 5000];
+    }
+
+    // For medium values
+    if (max < 100000) {
+      const step = Math.ceil(max / 5 / 1000) * 1000;
+      return [0, step, step * 2, step * 3, step * 4, step * 5];
+    }
+
+    // For large values
+    const step = Math.ceil(max / 5 / 100000) * 100000;
+    return [0, step, step * 2, step * 3, step * 4, step * 5];
+  };
+
+  const tickValues = getTickValues(minValue, maxValue);
 
   return (
     <ResponsiveContainer width="100%" height={300}>
       <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" vertical={false} />
         <XAxis dataKey="name" />
-        <YAxis tickFormatter={(value) => formatCurrency(value)} />
-        <Tooltip formatter={(value: number) => formatCurrency(value)} />
-        <Line type="monotone" dataKey={t("totalExpensesLabel")} stroke="#ef4444" />
-        <Line type="monotone" dataKey={t("totalIncomeLabel")} stroke="#10b981" />
-        <Line type="monotone" dataKey={t("balanceLabel")} stroke="#3b82f6" />
+        <YAxis
+          tickFormatter={(value) => formatCurrency(value)}
+          ticks={tickValues}
+          domain={[minValue < 0 ? minValue - 10000 : 0, maxValue + 10000]} // Add some padding
+          width={60} // Give more space for the y-axis labels
+        />
+        <Tooltip
+          formatter={(value: number) => {
+            return [
+              new Intl.NumberFormat("vi-VN", {
+                style: "currency",
+                currency: "VND",
+                maximumFractionDigits: 0,
+              }).format(value),
+              ""
+            ];
+          }}
+          labelFormatter={(label) => `Ngày ${label}`}
+        />
+        <Line type="monotone" dataKey={t("totalExpensesLabel")} stroke="#ef4444" name={t("totalExpensesLabel")} />
+        <Line type="monotone" dataKey={t("totalIncomeLabel")} stroke="#10b981" name={t("totalIncomeLabel")} />
+        <Line type="monotone" dataKey={t("balanceLabel")} stroke="#3b82f6" name={t("balanceLabel")} />
       </LineChart>
     </ResponsiveContainer>
   )
